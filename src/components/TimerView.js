@@ -1,6 +1,7 @@
 import React, { } from 'react' //why the '{ }' ??
 import { useDispatch } from 'react-redux'
 import '../TimerView.css'
+import { formatTime } from '../utils'
 
 import { togglerTimer } from '../actions'
 
@@ -11,7 +12,7 @@ export default function TimerView(props) {
     return (
         <div className='TimerView'>
             <h2>{ timer.name }</h2>
-            <h1>{ timer.time }</h1>
+            <h1>{ formatTime(timer.time) }</h1>
             <button
             onClick={() => dispatch(togglerTimer(index))}
             >
